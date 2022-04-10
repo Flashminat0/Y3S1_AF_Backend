@@ -1,8 +1,18 @@
 import express from "express";
 import {readdirSync} from "fs";
+import mongoose from "mongoose";
 
 const cors = require("cors");
 const app = express();
+
+require("dotenv").config();
+
+mongoose.connect(process.env.DATABASE).then(r => {
+    console.log("Connected to database");
+}).catch(e => {
+    console.log("Error connecting to database");
+});
+
 
 app.use(express.json({limit: "5mb"}));
 
