@@ -15,3 +15,15 @@ export const savePictureOnDB = async (req, res) => {
         res.status(500).json({message: 'Something went wrong'});
     }
 }
+
+export const getPictureFromId = (req, res) => {
+    try {
+        const {pictureId} = req.query;
+        Pictures.findById(pictureId)
+            .then(picture => res.status(200).json(picture))
+            .catch(err => res.status(400).json('Error: ' + err));
+
+    } catch (e) {
+        res.status(500).json({message: 'Something went wrong'});
+    }
+}
