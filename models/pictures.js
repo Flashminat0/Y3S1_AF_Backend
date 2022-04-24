@@ -12,9 +12,13 @@ const pictureSchema = new Schema(
             type: String,
             required: true
         },
-        url: {
-            type: String,
-            required: true
+        image: {
+            type: JSON,
+            required: true,
+            default: {
+                url: "",
+                name: ""
+            }
         },
     },
     {
