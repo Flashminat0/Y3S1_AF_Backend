@@ -9,10 +9,9 @@ export const registerUser = async (req, res) => {
         return res.status(200).json({message: "User Details fetched successfully", user});
     }
 
-
     const newUser = new User({
         userId,
-        name,
+        name
     });
 
     await User.create(newUser);
