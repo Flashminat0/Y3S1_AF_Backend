@@ -5,6 +5,11 @@ import {StreamChat} from 'stream-chat';
 export const registerUser = async (req, res) => {
     const {userId, name} = req.body;
 
+    const user = await User.findOne({userId});
+    if (user) {
+        return res.status(200).json({message: "User Details fetched successfully", user});
+    }
+
     // Define values.
     const api_key = process.env.STREAM_API_KEY
     const api_secret = process.env.STREAM_API_SECRET

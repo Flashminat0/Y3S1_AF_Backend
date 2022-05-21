@@ -24,6 +24,11 @@ const userSchema = new Schema(
                 name: "default_profile_pic.png"
             }
         },
+        role: {
+            type: String,
+            required: true,
+            default: "user"
+        }
     },
     {
         timestamps: true
