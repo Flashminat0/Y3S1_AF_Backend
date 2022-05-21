@@ -12,10 +12,6 @@ const userSchema = new Schema(
             type: String,
             required: true
         },
-        steamToken: {
-            type: String,
-            required: true
-        },
         image: {
             type: JSON,
             required: true,
