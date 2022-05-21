@@ -2,11 +2,11 @@
   "name": "reserch-sliit-system-backend",
   "version": "1.0.0",
   "description": "Backend Code of Research SLIIT System Website using Node.js",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -r esm index.js",
-    "start": "node -r esm index.js"
+    "dev": "nodemon -r esm server.js",
+    "start": "node -r esm server.js"
   },
   "author": "",
   "license": "ISC",
