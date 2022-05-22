@@ -1,34 +1,34 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
-const {Schema} = mongoose;
+const { Schema } = mongoose
 
 const userSchema = new Schema(
     {
         name: {
             type: String,
-            required: true
+            required: true,
         },
         userId: {
             type: String,
-            required: true
+            required: true,
         },
         image: {
             type: JSON,
             required: true,
             default: {
-                url: "https://firebasestorage.googleapis.com/v0/b/y3s1-sliit-af.appspot.com/o/default_profile_pic.png?alt=media&token=7b319ccf-5b3a-4ec4-8161-20399b7d7f3c",
-                name: "default_profile_pic.png"
-            }
+                url: 'https://firebasestorage.googleapis.com/v0/b/y3s1-sliit-af.appspot.com/o/default_profile_pic.png?alt=media&token=7b319ccf-5b3a-4ec4-8161-20399b7d7f3c',
+                name: 'default_profile_pic.png',
+            },
         },
         role: {
             type: String,
             required: true,
-            default: "user"
-        }
+            default: 'user',
+        },
     },
     {
-        timestamps: true
+        timestamps: true,
     }
-);
+)
 
-export default mongoose.model("User", userSchema);
+export default mongoose.model('User', userSchema)

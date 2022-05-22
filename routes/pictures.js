@@ -1,10 +1,10 @@
-import express from "express";
+import express from 'express'
 
-const router = express.Router();
+const router = express.Router()
 
-import {savePictureOnDB , getPictureFromId} from "../controllers/pictures";
+import { savePictureOnDB, getPictureFromId } from '../controllers/pictures'
 
-router.post("/save-pic-on-db", savePictureOnDB);
-router.get("/get-url-from-pic-id",getPictureFromId);
+router.post('/save-pic-on-db', savePictureOnDB)
+router.get('/get-url-from-pic-id', getPictureFromId)
 
-module.exports = router;
+module.exports = router
