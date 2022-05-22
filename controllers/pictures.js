@@ -1,6 +1,7 @@
 import Pictures from '../models/pictures';
 
 export const savePictureOnDB = async (req, res) => {
+
     try {
         const {name, description, url} = req.body;
         const picture = new Pictures({
