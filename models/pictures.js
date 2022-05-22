@@ -1,29 +1,29 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
-const {Schema} = mongoose;
+const { Schema } = mongoose
 
 const pictureSchema = new Schema(
     {
         name: {
             type: String,
-            required: true
+            required: true,
         },
         description: {
             type: String,
-            required: true
+            required: true,
         },
         image: {
             type: JSON,
             required: true,
             default: {
-                url: "",
-                name: ""
-            }
+                url: '',
+                name: '',
+            },
         },
     },
     {
-        timestamps: true
+        timestamps: true,
     }
-);
+)
 
-export default mongoose.model("Pictures", pictureSchema);
+export default mongoose.model('Pictures', pictureSchema)

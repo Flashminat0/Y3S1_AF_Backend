@@ -1,12 +1,10 @@
-import User from "../models/user";
+import User from '../models/user'
 
-export const getUsers = async (req,res) => {
-
+export const getUsers = async (req, res) => {
     try {
-        const result = await User.find();
-        res.json({result});
+        const result = await User.find()
+        res.json({ result })
     } catch (error) {
-        res.status(500).json({message: 'Something went wrong'});
+        res.status(500).json({ message: 'Something went wrong' })
     }
-  }
-  
+}

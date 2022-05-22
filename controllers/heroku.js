@@ -1,11 +1,9 @@
-export const herokuFunc = (req,res) => {
-  const {hello} = req.body;
+export const herokuFunc = (req, res) => {
+    const { hello } = req.body
 
-  res.send(`Hello ${hello}`);
+    res.send(`Hello ${hello}`)
 }
 
-
-export const helloTest = (req,res) => {
-
-  res.send(`Hello this is a test`);
+export const helloTest = (req, res) => {
+    res.send(`Hello this is a test`)
 }
