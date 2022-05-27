@@ -1,28 +1,43 @@
+import topic from '../models/topic';
 import Topics  from '../models/topic';
+import mongoose from 'mongoose';
 
+
+//input topic
 export const inputTopic =async(req,res)=>{
     try {
-        const {topic} = req.body;
+        const {name, grpID} = req.body;
         const topicList = new Topics({
-            topic
+            name, 
+            grpID
         });
+
+        console.log(topicList)
+
         await Topics.create(topicList)
         .then(()=>res.json('Topic saved'))
         .catch(err => res.status(400).json('Error:' + error));
 
     } catch (error) {
-        res.status(500).json({message: 'Something went wrong'});
+        res.status(500).json({message: 'Something went wrong', error : error});
     }
 }
 
-export const getTopic = (req, res) => {
-    try {
-        const {TopicId} = req.query;
-        Topics.findById(TopicId)
-            .then(topicList => res.status(200).json(topicList))
-            .catch(err => res.status(400).json('Error: ' + err));
+//retreive all topics 
 
-    } catch (e) {
-        res.status(500).json({message: 'Something went wrong'});
-    }
+export const getTopic = async (req, res) => {
+
+    try {
+        const result = await topic.find()
+    res.json(result)
+    } catch (error) {
+        res.status(500).json({ message: 'Something went wrong' })
+    }    
+}
+
+export const deleteTopic = async (req, res) => {
+    const { id } = req.body;
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No topic with this ID' + id);
+    await Topics.findByIdAndRemove(id);
+    res.json ({ message: 'Topic deleted Successfully '});
 }
