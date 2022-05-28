@@ -1,8 +1,9 @@
 import express from 'express'
-import { getUsers } from '../controllers/users'
+import { getUsers , removeUser} from '../controllers/users'
 
 const router = express.Router()
 
-router.get('/userlist', getUsers)
+router.get('/users/userlist', getUsers)
+router.delete('/users/removeuser', removeUser)
 
 module.exports = router
