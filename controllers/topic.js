@@ -1,5 +1,5 @@
-import topic from '../models/topic'
-import Topics from '../models/topic'
+import topic from '../models/submittedTopic'
+import Topics from '../models/submittedTopic'
 import mongoose from 'mongoose'
 
 //input topic
