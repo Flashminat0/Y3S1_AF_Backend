@@ -1,14 +1,10 @@
 import mongoose from 'mongoose'
 
-const { Schema } = mongoose
+const {Schema} = mongoose
 
 const userSchema = new Schema(
     {
         name: {
-            type: String,
-            required: true,
-        },
-        userId: {
             type: String,
             required: true,
         },
@@ -23,7 +19,17 @@ const userSchema = new Schema(
         role: {
             type: String,
             required: true,
-            default: 'user',
+            default: 'student',
+            enum: ['student', 'co-supervisor', 'supervisor', 'admin'],
+        },
+        tags: {
+            type: JSON,
+            required: false,
+            default: [],
+        },
+        groupId: {
+            type: String,
+            required: false,
         },
     },
     {

@@ -1,5 +1,5 @@
 import express from 'express'
-import { readdirSync } from 'fs'
+import {readdirSync} from 'fs'
 import mongoose from 'mongoose'
 
 const cors = require('cors')
@@ -16,7 +16,7 @@ mongoose
         console.log('Error connecting to database')
     })
 
-app.use(express.json({ limit: '5mb' }))
+app.use(express.json({limit: '5mb'}))
 
 const corsOptions = {
     origin: '*',

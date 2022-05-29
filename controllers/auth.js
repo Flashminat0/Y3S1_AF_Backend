@@ -1,13 +1,13 @@
 import User from '../models/user'
 
 export const registerUser = async (req, res) => {
-    const { userId, name } = req.body
+    const {userId, name} = req.body
 
-    const user = await User.findOne({ userId })
+    const user = await User.findOne({userId})
     if (user) {
         return res
             .status(200)
-            .json({ message: 'User Details fetched successfully', user })
+            .json({message: 'User Details fetched successfully', user})
     }
 
     const newUser = new User({

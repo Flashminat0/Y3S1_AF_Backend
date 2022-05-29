@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const { Schema } = mongoose
+const {Schema} = mongoose
 
 const pictureSchema = new Schema(
     {
@@ -13,12 +13,11 @@ const pictureSchema = new Schema(
             required: true,
         },
         image: {
-            type: JSON,
-            required: true,
-            default: {
+            type: {
                 url: '',
                 name: '',
             },
+            required: true,
         },
     },
     {
