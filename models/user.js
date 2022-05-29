@@ -23,7 +23,7 @@ const userSchema = new Schema(
             enum: ['student', 'co-supervisor', 'supervisor', 'admin'],
         },
         tags: {
-            type: JSON,
+            type: [String],
             required: false,
             default: [],
         },
