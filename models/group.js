@@ -8,7 +8,19 @@ const groupSchema = new Schema({
             required: true,
         },
         members: {
-            type: JSON,
+            type: [{
+                userId: {
+                    type: String,
+                    required: true,
+                },
+                status: {
+                    type: String,
+                    required: true,
+                    default: 'pending',
+                    enum: ['pending', 'approved', 'rejected'],
+                }
+            }],
+            required: false,
         },
         leaderId: {
             type: String,

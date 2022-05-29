@@ -8,10 +8,6 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
-        userId: {
-            type: String,
-            required: true,
-        },
         image: {
             type: JSON,
             required: true,
