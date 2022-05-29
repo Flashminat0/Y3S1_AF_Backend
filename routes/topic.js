@@ -1,5 +1,5 @@
 import express from 'express'
-import { inputTopic, getTopic, deleteTopic } from '../controllers/topic'
+import {inputTopic, getTopic, deleteTopic} from '../controllers/topic'
 
 const router = express.Router()
 

@@ -9,31 +9,34 @@ const TopicSchema = new Schema(
             required: true,
         },
         markingScheme: {
-            type: [{
-                name: {
-                    type: String,
-                    required: true,
+            type: [
+                {
+                    name: {
+                        type: String,
+                        required: true,
+                    },
+                    url: {
+                        type: String,
+                        required: true,
+                    },
                 },
-                url: {
-                    type: String,
-                    required: true,
-                }
-            }],
+            ],
             default: [],
             required: false,
         },
         projectTemplates: {
-            type: [{
-                name: {
-                    type: String,
-                    required: true,
+            type: [
+                {
+                    name: {
+                        type: String,
+                        required: true,
+                    },
+                    url: {
+                        type: String,
+                        required: true,
+                    },
                 },
-                url: {
-                    type: String,
-                    required: true,
-                }
-
-            }],
+            ],
             default: [],
             required: false,
         },
@@ -41,12 +44,11 @@ const TopicSchema = new Schema(
             type: Number,
             default: 1,
             required: true,
-        }
+        },
     },
     {
         timestamps: true,
     }
 )
-
 
 export default mongoose.model('Topic', TopicSchema)

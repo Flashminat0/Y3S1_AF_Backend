@@ -15,36 +15,38 @@ const messagesSchema = new Schema(
         messages: {
             type: JSON,
             required: true,
-            default: [{
-                id: {
-                    type: mongoose.Types.ObjectId,
-                    required: true,
-                    default: new mongoose.Types.ObjectId(),
-                    unique: true,
+            default: [
+                {
+                    id: {
+                        type: mongoose.Types.ObjectId,
+                        required: true,
+                        default: new mongoose.Types.ObjectId(),
+                        unique: true,
+                    },
+                    sender: {
+                        type: String,
+                        required: true,
+                    },
+                    message: {
+                        type: String,
+                        required: true,
+                        trim: true,
+                    },
+                    type: {
+                        type: String,
+                        required: true,
+                        enum: ['text', 'file'],
+                    },
+                    time: new Date().toLocaleTimeString(),
+                    requestingForApproval: false,
+                    approvedState: null,
                 },
-                sender: {
-                    type: String,
-                    required: true,
-                },
-                message: {
-                    type: String,
-                    required: true,
-                    trim: true,
-                },
-                type: {
-                    type: String,
-                    required: true,
-                    enum: ['text', 'file'],
-                },
-                time: new Date().toLocaleTimeString(),
-                requestingForApproval: false,
-                approvedState: null,
-            }],
+            ],
             approvedState: {
                 type: String,
                 enum: ['pending', 'approved', 'rejected'],
-            }
-        }
+            },
+        },
     },
     {
         timestamps: true,

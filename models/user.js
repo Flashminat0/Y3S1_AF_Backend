@@ -30,7 +30,7 @@ const userSchema = new Schema(
         groupId: {
             type: String,
             required: false,
-        }
+        },
     },
     {
         timestamps: true,

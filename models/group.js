@@ -2,24 +2,27 @@ import mongoose from 'mongoose'
 
 const {Schema} = mongoose
 
-const groupSchema = new Schema({
+const groupSchema = new Schema(
+    {
         name: {
             type: String,
             required: true,
         },
         members: {
-            type: [{
-                userId: {
-                    type: String,
-                    required: true,
+            type: [
+                {
+                    userId: {
+                        type: String,
+                        required: true,
+                    },
+                    status: {
+                        type: String,
+                        required: true,
+                        default: 'pending',
+                        enum: ['pending', 'approved', 'rejected'],
+                    },
                 },
-                status: {
-                    type: String,
-                    required: true,
-                    default: 'pending',
-                    enum: ['pending', 'approved', 'rejected'],
-                }
-            }],
+            ],
             required: false,
         },
         leaderId: {
@@ -30,7 +33,7 @@ const groupSchema = new Schema({
             type: String,
             required: false,
             default: null,
-        }
+        },
     },
     {
         timestamps: true,

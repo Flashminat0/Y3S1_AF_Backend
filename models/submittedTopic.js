@@ -25,17 +25,19 @@ const submittedTopicSchema = new Schema(
             required: false,
         },
         SupervisorIDs: {
-            type: [{
-                id: {
-                    type: String,
-                    required: true,
+            type: [
+                {
+                    id: {
+                        type: String,
+                        required: true,
+                    },
+                    status: {
+                        type: String,
+                        required: true,
+                        default: 'pending',
+                    },
                 },
-                status: {
-                    type: String,
-                    required: true,
-                    default: 'pending',
-                }
-            }],
+            ],
             required: false,
         },
         ChoseCoSupervisorId: {
@@ -43,23 +45,25 @@ const submittedTopicSchema = new Schema(
             required: false,
         },
         CoSupervisorIDs: {
-            type: [{
-                id: {
-                    type: String,
-                    required: true,
+            type: [
+                {
+                    id: {
+                        type: String,
+                        required: true,
+                    },
+                    status: {
+                        type: String,
+                        required: true,
+                        default: 'pending',
+                    },
                 },
-                status: {
-                    type: String,
-                    required: true,
-                    default: 'pending',
-                }
-            }],
+            ],
             required: false,
         },
         panelMembers: {
             type: JSON,
             required: false,
-        }
+        },
     },
     {
         timestamps: true,
