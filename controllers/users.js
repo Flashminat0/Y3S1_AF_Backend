@@ -88,3 +88,20 @@ export const getUserDataFromId = async (req, res) => {
         })
 
 }
+
+export const isInAGroup = async (req, res) => {
+    const {userId} = req.query;
+
+    await Group.find({
+        "members.userId": userId,
+        "members.status": 'approved'
+    }).then((group) => {
+        return res.status(200).json({
+            isInAGroup: group.length > 0,
+            group: group[0]
+        })
+    }).catch((err) => {
+        return res.status(400).json(err)
+    })
+
+}

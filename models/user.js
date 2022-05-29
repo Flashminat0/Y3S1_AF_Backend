@@ -31,6 +31,10 @@ const userSchema = new Schema(
             type: String,
             required: false,
         },
+        userId: {
+            type: String,
+            required: true
+        }
     },
     {
         timestamps: true,

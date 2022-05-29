@@ -1,5 +1,5 @@
 import express from 'express'
-import {getUsers, removeUser, createGroup, searchForGroup , getAllGroups,getUserDataFromId} from '../controllers/users'
+import {getUsers, removeUser, createGroup, searchForGroup, getAllGroups, getUserDataFromId,isInAGroup} from '../controllers/users'
 
 const router = express.Router()
 
@@ -10,5 +10,6 @@ router.post('/users/create-group', createGroup)
 router.get('/users/find-group', searchForGroup)
 router.get('/users/get-all-groups', getAllGroups)
 router.get('/users/get-user-data-from-id', getUserDataFromId)
+router.get('/users/is-in-a-group', isInAGroup)
 
 module.exports = router
