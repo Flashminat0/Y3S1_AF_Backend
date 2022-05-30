@@ -24,7 +24,7 @@ export const inputTopic = async (req, res) => {
 export const getTopic = async (req, res) => {
     try {
         const result = await Topics.find()
-        return res.status(200   ).json(result)
+        return res.status(200).json(result)
     } catch (error) {
         res.status(500).json({message: 'Something went wrong'})
     }
