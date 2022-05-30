@@ -4,12 +4,12 @@ import mongoose from 'mongoose'
 //input topic
 export const inputTopic = async (req, res) => {
     try {
-        const {tags , markingScheme , projectTemplates, steps} = req.body
+        const {tags, markingScheme, projectTemplates, steps} = req.body
         const topics = new Topics({
             tags,
             markingScheme,
             projectTemplates,
-            steps
+            steps,
         })
         await Topics.create(topics)
             .then(() => res.json('Topic saved'))
