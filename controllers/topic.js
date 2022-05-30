@@ -1,23 +1,21 @@
-import topic from '../models/submittedTopic'
-import Topics from '../models/submittedTopic'
+import Topics from '../models/topic'
 import mongoose from 'mongoose'
 
 //input topic
 export const inputTopic = async (req, res) => {
     try {
-        const {name, grpID} = req.body
-        const topicList = new Topics({
-            name,
-            grpID,
+        const {tags, markingScheme, projectTemplates, steps} = req.body
+        const topics = new Topics({
+            tags,
+            markingScheme,
+            projectTemplates,
+            steps,
         })
-
-        console.log(topicList)
-
-        await Topics.create(topicList)
+        await Topics.create(topics)
             .then(() => res.json('Topic saved'))
-            .catch((err) => res.status(400).json('Error:' + error))
+            .catch((err) => res.status(400).json('Error:' + err))
     } catch (error) {
-        res.status(500).json({message: 'Something went wrong', error: error})
+        res.status(500).json({message: 'Something went wrong !!', error: error})
     }
 }
 
@@ -25,8 +23,8 @@ export const inputTopic = async (req, res) => {
 
 export const getTopic = async (req, res) => {
     try {
-        const result = await topic.find()
-        res.json(result)
+        const result = await Topics.find()
+        return res.status(200).json(result)
     } catch (error) {
         res.status(500).json({message: 'Something went wrong'})
     }
