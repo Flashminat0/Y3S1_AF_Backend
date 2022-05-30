@@ -7,7 +7,9 @@ import {
     getAllGroups,
     getUserDataFromId,
     isInAGroup,
-    requestForJoinGroup, acceptToGroup , rejectToGroup
+    requestForJoinGroup,
+    acceptToGroup,
+    rejectToGroup,
 } from '../controllers/users'
 
 const router = express.Router()
