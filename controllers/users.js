@@ -177,10 +177,13 @@ export const rejectToGroup = async (req, res) => {
         })
 }
 
-export const updateUserRole = async (req , res) => {
-    const {id , role} = req.body
-    await User.findByIdAndUpdate({ _id: id },
-    { role: role },{new: true})
-    .then((User)=>{return res.status(200).json(User)})
-    .catch((err) => {return res.status(400).json(err)})
+export const updateUserRole = async (req, res) => {
+    const {id, role} = req.body
+    await User.findByIdAndUpdate({_id: id}, {role: role}, {new: true})
+        .then((User) => {
+            return res.status(200).json(User)
+        })
+        .catch((err) => {
+            return res.status(400).json(err)
+        })
 }
