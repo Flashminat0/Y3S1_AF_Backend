@@ -2,6 +2,7 @@ import express from 'express'
 import {
     getUsers,
     removeUser,
+    updateUserRole,
     createGroup,
     searchForGroup,
     getAllGroups,
@@ -16,6 +17,7 @@ const router = express.Router()
 
 router.get('/users/userlist', getUsers)
 router.delete('/users/removeuser', removeUser)
+router.put('/user/updaterole', updateUserRole)
 
 router.post('/users/create-group', createGroup)
 router.get('/users/find-group', searchForGroup)
