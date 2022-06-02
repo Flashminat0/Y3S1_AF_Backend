@@ -18,9 +18,8 @@ const messagesSchema = new Schema(
             default: [
                 {
                     id: {
-                        type: mongoose.Types.ObjectId,
+                        type: String,
                         required: true,
-                        default: new mongoose.Types.ObjectId(),
                         unique: true,
                     },
                     sender: {
@@ -42,10 +41,10 @@ const messagesSchema = new Schema(
                     approvedState: null,
                 },
             ],
-            approvedState: {
-                type: String,
-                enum: ['pending', 'approved', 'rejected'],
-            },
+        },
+        approvedState: {
+            type: String,
+            enum: ['pending', 'approved', 'rejected'],
         },
     },
     {
