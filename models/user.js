@@ -20,7 +20,7 @@ const userSchema = new Schema(
             type: String,
             required: true,
             default: 'student',
-            enum: ['student', 'co-supervisor', 'supervisor', 'admin'],
+            enum: ['student', 'co-supervisor', 'supervisor', 'panel-member', 'admin'],
         },
         tags: {
             type: [String],

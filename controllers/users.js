@@ -187,3 +187,24 @@ export const updateUserRole = async (req, res) => {
             return res.status(400).json(err)
         })
 }
+
+export const getSupervisors = async (req, res) => {
+
+    await User.find({role: 'supervisor'})
+        .then((supervisors) => {
+            return res.status(200).json(supervisors)
+        })
+        .catch((err) => {
+            return res.status(400).json(err)
+        })
+}
+export const getCoSupervisors = async (req, res) => {
+
+    await User.find({role: 'co-supervisor'})
+        .then((supervisors) => {
+            return res.status(200).json(supervisors)
+        })
+        .catch((err) => {
+            return res.status(400).json(err)
+        })
+}

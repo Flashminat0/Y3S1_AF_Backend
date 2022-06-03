@@ -4,43 +4,54 @@ const {Schema} = mongoose
 
 const messagesSchema = new Schema(
     {
-        studentId: {
+        senderId: {
             type: String,
             required: true,
         },
-        staffUserId: {
+        receiverId: {
             type: String,
             required: true,
         },
         messages: {
-            type: JSON,
-            required: true,
-            default: [
-                {
-                    id: {
-                        type: String,
-                        required: true,
-                        unique: true,
-                    },
-                    sender: {
-                        type: String,
-                        required: true,
-                    },
-                    message: {
-                        type: String,
-                        required: true,
-                        trim: true,
-                    },
-                    type: {
-                        type: String,
-                        required: true,
-                        enum: ['text', 'file'],
-                    },
-                    time: new Date().toLocaleTimeString(),
-                    requestingForApproval: false,
-                    approvedState: null,
+            type: [{
+                id: {
+                    type: String,
+                    required: true,
+                    unique: true,
                 },
-            ],
+                sender: {
+                    type: String,
+                    required: true,
+                },
+                message: {
+                    type: String,
+                    required: true,
+                    trim: true,
+                },
+                type: {
+                    type: String,
+                    required: true,
+                    enum: ['text', 'file'],
+                },
+                sentTime: {
+                    type: Date,
+                    required: true,
+                    default: Date.now,
+                },
+                requestingForApproval: {
+                    type: Boolean,
+                    required: true,
+                    default: false,
+                },
+                approvedState: {
+                    type: Boolean,
+                    required: true,
+                    enum: [null, true, false],
+                    default: null,
+                },
+            }],
+            required: true,
+            default: [],
         },
         approvedState: {
             type: String,
