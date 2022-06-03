@@ -9,34 +9,12 @@ const TopicSchema = new Schema(
             required: true,
         },
         markingScheme: {
-            type: [
-                {
-                    name: {
-                        type: String,
-                        required: true,
-                    },
-                    url: {
-                        type: String,
-                        required: true,
-                    },
-                },
-            ],
+            type: JSON,
             default: [],
             required: false,
         },
         projectTemplates: {
-            type: [
-                {
-                    name: {
-                        type: String,
-                        required: true,
-                    },
-                    url: {
-                        type: String,
-                        required: true,
-                    },
-                },
-            ],
+            type: JSON,
             default: [],
             required: false,
         },
