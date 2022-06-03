@@ -189,7 +189,6 @@ export const updateUserRole = async (req, res) => {
 }
 
 export const getSupervisors = async (req, res) => {
-
     await User.find({role: 'supervisor'})
         .then((supervisors) => {
             return res.status(200).json(supervisors)
@@ -199,7 +198,6 @@ export const getSupervisors = async (req, res) => {
         })
 }
 export const getCoSupervisors = async (req, res) => {
-
     await User.find({role: 'co-supervisor'})
         .then((supervisors) => {
             return res.status(200).json(supervisors)
@@ -210,7 +208,6 @@ export const getCoSupervisors = async (req, res) => {
 }
 
 export const getStudents = async (req, res) => {
-
     await User.find({role: 'student'})
         .then((supervisors) => {
             return res.status(200).json(supervisors)
