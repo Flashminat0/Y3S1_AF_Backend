@@ -11,7 +11,7 @@ import {
     requestForJoinGroup,
     acceptToGroup,
     rejectToGroup,
-    getSupervisors, getCoSupervisors,
+    getSupervisors, getCoSupervisors, getStudents,
 } from '../controllers/users'
 
 const router = express.Router()
@@ -32,5 +32,6 @@ router.post('/users/reject-to-group', rejectToGroup)
 
 router.get('/users/get-supervisors', getSupervisors)
 router.get('/users/get-co-supervisors', getCoSupervisors)
+router.get('/users/get-students', getStudents)
 
 module.exports = router

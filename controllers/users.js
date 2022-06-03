@@ -208,3 +208,14 @@ export const getCoSupervisors = async (req, res) => {
             return res.status(400).json(err)
         })
 }
+
+export const getStudents = async (req, res) => {
+
+    await User.find({role: 'student'})
+        .then((supervisors) => {
+            return res.status(200).json(supervisors)
+        })
+        .catch((err) => {
+            return res.status(400).json(err)
+        })
+}
