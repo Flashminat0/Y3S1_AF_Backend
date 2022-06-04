@@ -1,5 +1,10 @@
 import express from 'express'
-import {approveProject, fetchMessages, rejectProject, sendMessage} from '../controllers/messages'
+import {
+    approveProject,
+    fetchMessages,
+    rejectProject,
+    sendMessage,
+} from '../controllers/messages'
 
 const router = express.Router()
 

@@ -1,5 +1,5 @@
 import express from 'express'
-import {test111} from "../controllers/submittedTopic";
+import {test111} from '../controllers/submittedTopic'
 
 const router = express.Router()
 
