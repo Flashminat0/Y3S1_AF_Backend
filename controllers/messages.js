@@ -40,8 +40,6 @@ export const fetchMessages = async (req, res) => {
     await Messages.findOne({studentId, staffId})
         .then(async (chat) => {
             if (chat) {
-                console.log(chat)
-
                 return res.status(200).json({
                     message: 'Messages fetched successfully',
                     chat,
