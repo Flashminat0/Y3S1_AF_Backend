@@ -29,7 +29,7 @@ router.get('/users/get-user-data-from-id', getUserDataFromId)
 router.get('/users/is-in-a-group', isInAGroup)
 router.post('/users/request-for-join-group', requestForJoinGroup)
 router.post('/users/approve-to-group', acceptToGroup)
-router.delete('/users/reject-from-group', rejectFromGroup)
+router.post('/users/reject-to-group', rejectFromGroup)
 
 router.get('/users/get-supervisors', getSupervisors)
 router.get('/users/get-co-supervisors', getCoSupervisors)
