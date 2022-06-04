@@ -22,7 +22,7 @@ const router = express.Router()
 router.get('/users/userlist', getUsers)
 router.delete('/users/removeuser', removeUser)
 router.put('/user/updaterole', updateUserRole)
-router.get('/users/panelmembers',getPanelMembers)
+router.get('/users/panelmembers', getPanelMembers)
 
 router.post('/users/create-group', createGroup)
 router.get('/users/find-group', searchForGroup)

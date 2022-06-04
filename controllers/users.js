@@ -240,9 +240,11 @@ export const getStudents = async (req, res) => {
 
 export const getPanelMembers = async (req, res) => {
     try {
-        const result = await User.find({ role: "panel-member"})
+        const result = await User.find({role: 'panel-member'})
         res.json({result})
     } catch (error) {
-        res.status(500).json({message: 'Something went wrong while searching A Panel Member'})
+        res.status(500).json({
+            message: 'Something went wrong while searching A Panel Member',
+        })
     }
 }
