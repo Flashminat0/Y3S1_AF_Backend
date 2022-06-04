@@ -163,13 +163,15 @@ export const rejectFromGroup = async (req, res) => {
         {groupID},
         {
             $pull: {
-                'members': {userId},
-            }
-        }).then((group) => {
-        return res.status(200).json({
-            group,
+                members: {userId},
+            },
+        }
+    )
+        .then((group) => {
+            return res.status(200).json({
+                group,
+            })
         })
-    })
         .catch((err) => {
             return res.stale(400).json('err')
         })

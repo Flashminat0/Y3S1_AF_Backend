@@ -1,6 +1,6 @@
 import Topics from '../models/topic'
 import mongoose from 'mongoose'
-import topic from "../models/topic";
+import topic from '../models/topic'
 
 //input topic
 export const inputTopic = async (req, res) => {
@@ -40,40 +40,46 @@ export const deleteTopic = async (req, res) => {
 }
 
 export const getTopicData = async (req, res) => {
-    const {topicTag} = req.query;
+    const {topicTag} = req.query
 
-    console.log(topicTag);
+    console.log(topicTag)
 
-    await Topics.findById(topicTag).then((topic) => {
-        return res.status(200).json({topic})
-    }).catch((err) => {
-        return res.status(400).json(err)
-    })
+    await Topics.findById(topicTag)
+        .then((topic) => {
+            return res.status(200).json({topic})
+        })
+        .catch((err) => {
+            return res.status(400).json(err)
+        })
 }
 
 export const updateProjectTemplates = async (req, res) => {
-    const {id, projectTemplates} = req.body;
+    const {id, projectTemplates} = req.body
 
     await Topics.findByIdAndUpdate(id, {
-        projectTemplates: projectTemplates
-    }).then((topic) => {
-        return res.status(200).json({topic})
-    }).catch((err) => {
-        return res.status(400).json(err)
+        projectTemplates: projectTemplates,
     })
-
+        .then((topic) => {
+            return res.status(200).json({topic})
+        })
+        .catch((err) => {
+            return res.status(400).json(err)
+        })
 }
 
 export const deleteProjectTemplates = async (req, res) => {
-    const {templateId} = req.query;
+    const {templateId} = req.query
 
     await Topics.findOneAndUpdate(
         {templateId},
         {
-            $pull: {}
-        }).then((topic) => {
-        return res.status(200).json({topic})
-    }).catch((err) => {
-        return res.status(400).json(err)
-    })
+            $pull: {},
+        }
+    )
+        .then((topic) => {
+            return res.status(200).json({topic})
+        })
+        .catch((err) => {
+            return res.status(400).json(err)
+        })
 }

@@ -12,7 +12,8 @@ import {
     acceptToGroup,
     getSupervisors,
     getCoSupervisors,
-    getStudents, rejectFromGroup,
+    getStudents,
+    rejectFromGroup,
 } from '../controllers/users'
 
 const router = express.Router()
