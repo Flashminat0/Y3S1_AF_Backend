@@ -63,3 +63,17 @@ export const updateProjectTemplates = async (req, res) => {
     })
 
 }
+
+export const deleteProjectTemplates = async (req, res) => {
+    const {templateId} = req.query;
+
+    await Topics.findOneAndUpdate(
+        {templateId},
+        {
+            $pull: {}
+        }).then((topic) => {
+        return res.status(200).json({topic})
+    }).catch((err) => {
+        return res.status(400).json(err)
+    })
+}
