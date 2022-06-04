@@ -4,7 +4,8 @@ import {
     getTopic,
     deleteTopic,
     getTopicData,
-    updateProjectTemplates, deleteProjectTemplates,
+    updateProjectTemplates,
+    deleteProjectTemplates,
 } from '../controllers/topic'
 
 const router = express.Router()
