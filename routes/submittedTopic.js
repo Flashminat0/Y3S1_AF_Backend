@@ -1,8 +1,9 @@
 import express from 'express'
-import {test111} from '../controllers/submittedTopic'
+import {approveProject, rejectProject} from '../controllers/submittedTopic'
 
 const router = express.Router()
 
-router.post('/test111', test111)
+router.post('/submittedTopic/approve-topic', approveProject)
+router.post('/submittedTopic/reject-topic', rejectProject)
 
 module.exports = router

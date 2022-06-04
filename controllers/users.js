@@ -177,26 +177,6 @@ export const rejectFromGroup = async (req, res) => {
         })
 }
 
-// export const rejectToGroup = async (req, res) => {
-//     const {groupID, userId} = req.body
-//
-//     await Group.updateOne(
-//         {_id: groupID},
-//         {
-//             $pull: {
-//                 'members.$.status': 'rejected',
-//             },
-//         }
-//     )
-//         .then((group) => {
-//             return res.status(200).json({
-//                 group,
-//             })
-//         })
-//         .catch((err) => {
-//             return res.stale(400).json('err')
-//         })
-// }
 
 export const updateUserRole = async (req, res) => {
     const {id, role} = req.body
