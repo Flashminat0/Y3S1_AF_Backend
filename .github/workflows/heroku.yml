@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      - uses: akhileshns/heroku-deploy@v3.12.14 # This is the action
         with:
           heroku_api_key: "1c2c4fd1-ed7f-43ea-ab26-17fb730cbc88"
           heroku_app_name: "research-sliit-system" #Must be unique in Heroku
